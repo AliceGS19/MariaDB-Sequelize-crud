@@ -3,6 +3,7 @@ const express = require('express')
 const list = require('./list');
 const create = require('./create');
 const remove = require('./remove');
+const update = require('./update');
 const getById = require('./getById');
 
 const { users: { authBody, authEmail } } = require('../../middlewares')
@@ -20,5 +21,7 @@ router.use(authBody);
 router.use(authEmail);
 
 router.post('/', create);
+
+router.put('/:id', update);
 
 module.exports = router

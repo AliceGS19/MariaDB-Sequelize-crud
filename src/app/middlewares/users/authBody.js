@@ -5,6 +5,7 @@ const rolesService = require('../../services/roles');
 module.exports = async (req,res,next) => {
     try {
       const { name, email, password, roleId } = req.body
+      console.log(req.body)
       const { error } = userSchema.validate({ name, email, password, roleId });
       if (error) return res.status(StatusCodes.BAD_REQUEST).json({ message: error.message })
       if (roleId) {
