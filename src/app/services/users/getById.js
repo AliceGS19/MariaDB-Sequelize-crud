@@ -9,12 +9,11 @@ module.exports = async (id) => {
             attributes: ['name']
           }
       })
-      if (user) {
-        user = user.dataValues
+      if (!user) {
+        return null
       }
-      delete user.password
-      user.role = user.role.name
-      return user
+      delete user.dataValues.password
+      return user.dataValues
     } catch (err) {
         return (err)
     }

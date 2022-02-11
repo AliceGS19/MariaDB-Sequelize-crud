@@ -1,3 +1,4 @@
+const { StatusCodes } = require('http-status-codes');
 const { remove } = require('../../services/users');
 
 module.exports = async (req, res, next) => {
@@ -6,7 +7,7 @@ module.exports = async (req, res, next) => {
       
       await remove(id)
 
-      return res.status(204).end()
+      return res.status(StatusCodes.NO_CONTENT).end()
     } catch (error) {
       next(error)
     }

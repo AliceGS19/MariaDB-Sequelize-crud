@@ -1,3 +1,4 @@
+const { StatusCodes } = require('http-status-codes');
 const { create } = require('../../services/users');
 
 module.exports = async (req, res, next) => {
@@ -6,7 +7,7 @@ module.exports = async (req, res, next) => {
       
       await create({ name, email, password, roleId })
 
-      return res.status(201).json({ message: 'User created successfully'})
+      return res.status(StatusCodes.CREATED).json({ message: 'User created successfully'})
     } catch (error) {
       next(error)
     }
