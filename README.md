@@ -90,6 +90,8 @@ iniciar a aplicação com o nodemon (reiniciar a aplicação sempre que uma nova
 # Método get: 
 Não necessita de body ou headers
 
+# Casos:
+
 - Caso ocorra tudo certo retorna status 200 e uma lista com todos os usuários cadastrados
 no corpo da resposta.
 
@@ -103,6 +105,8 @@ Não necessita de headers, necessita de um body no formato JSON, com os campos:
 - email: string (deve ser um email válido segundo testes da biblioteca joi);
 - password: string (pelo menos 6 caracteres);
 - roleId (opcional): number (INTEGER);
+
+# Casos:
 
 - Caso algum dos campos não respeite esse formato, retorna status 400 e uma mensagem
 gerada pelo joi de acordo com o erro no body.
@@ -127,6 +131,8 @@ utilizando os campos passados no body, retorna status 201 e a mensagem "User cre
 # Método get: 
 Não necessita de body ou headers
 
+# Casos:
+
 - Caso ocorra tudo certo retorna status 200 e um objeto com as informações do usuário buscado
 
 - Caso não possua um usuário com o id inserido cadastrado no banco, retorna status 404 e a 
@@ -139,6 +145,8 @@ Não necessita de headers, necessita de um body no formato JSON, com os campos:
 - email: string (deve ser um email válido segundo testes da biblioteca joi);
 - password: string (pelo menos 6 caracteres);
 - roleId (opcional): number (INTEGER);
+
+# Casos:
 
 - Caso algum dos campos não respeite esse formato, retorna status 400 e uma mensagem
 gerada pelo joi de acordo com o erro no body.
@@ -157,6 +165,8 @@ com o id correspondento no banco utilizando os campos passados no body, retorna 
 
 
 # Método delete:
+
+# Casos:
 
 - Caso exista um usuário correspondente ao id passado no banco, remove o usuário, retorna apenas
 status 204.
