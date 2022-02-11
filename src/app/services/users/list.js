@@ -2,7 +2,9 @@ const { Users } = require('../../models');
 
 module.exports = async () => {
     try {
-      const users = (await Users.findAll()).dataValues
+      const users = (await Users.findAll())
+      if (!users) return null
+      users = users.dataValues
       users.map((user) => {
           delete user.password;
           return user

@@ -6,8 +6,8 @@ const app = express();
 
 app.use(express.json());
 
-// app.use('/', root);
+app.use('/', root);
 
-// app.use(error);
+app.use(error);
 
 module.exports = app
