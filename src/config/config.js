@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: process.env.NODE_ENV === "test" ? ".env.test" : ".env"
+  path: ".env"
 });
 
 
@@ -10,6 +10,6 @@ module.exports = {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     port: +process.env.DB_PORT,
-    dialect: process.env.DB_DIALECT || "mariadb",
+    dialect: "mariadb",
   },
 }
